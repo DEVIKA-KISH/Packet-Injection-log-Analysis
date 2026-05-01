@@ -1,0 +1,183 @@
+nRF Connect, 2026-04-29
+ELITE950 (0C:7F:ED:73:1C:E2)
+I	17:14:39.014	[Server] Server started
+V	17:14:39.017	Device Information (0x180A)
+- Manufacturer Name String [R] (0x2A29)
+- Model Number String [R] (0x2A24)
+- Serial Number String [R] (0x2A25)
+- Hardware Revision String [R] (0x2A27)
+- Firmware Revision String [R] (0x2A26)
+- Software Revision String [R] (0x2A28)
+- PnP ID [R] (0x2A50)
+Unknown Service (f000efe0-0451-4000-0000-00000000b000)
+- Unknown Characteristic [W WNR] (f000efe1-0451-4000-0000-00000000b000)
+- Unknown Characteristic [N R] (f000efe3-0451-4000-0000-00000000b000)
+   Client Characteristic Configuration (0x2902)
+Unknown Service (0000fee7-0000-1000-8000-00805f9b34fb)
+- Unknown Characteristic [I N R W] (0000fea2-0000-1000-8000-00805f9b34fb)
+   Client Characteristic Configuration (0x2902)
+- Unknown Characteristic [I N R W] (0000fea1-0000-1000-8000-00805f9b34fb)
+   Client Characteristic Configuration (0x2902)
+- Unknown Characteristic [W] (0000fec7-0000-1000-8000-00805f9b34fb)
+- Unknown Characteristic [I R] (0000fec8-0000-1000-8000-00805f9b34fb)
+   Client Characteristic Configuration (0x2902)
+- Unknown Characteristic [R] (0000fec9-0000-1000-8000-00805f9b34fb)
+Unknown Service (0000ff12-0000-1000-8000-00805f9b34fb)
+- Unknown Characteristic [N R] (0000ff02-0000-1000-8000-00805f9b34fb)
+   Client Characteristic Configuration (0x2902)
+- Unknown Characteristic [W WNR] (0000ff01-0000-1000-8000-00805f9b34fb)
+V	17:14:39.176	Connecting to 0C:7F:ED:73:1C:E2...
+D	17:14:39.176	gatt = device.connectGatt(autoConnect = false, TRANSPORT_LE, preferred PHY = LE 1M)
+D	17:15:09.217	[Server callback] Connection state changed with status: 0 and new state: DISCONNECTED (0)
+I	17:15:09.217	[Server] Device disconnected
+D	17:15:09.227	[Callback] Connection state changed with status: 147 and new state: DISCONNECTED (0)
+E	17:15:09.227	Error 147 (0x93): GATT CONN TIMEOUT
+I	17:15:09.227	Disconnected
+D	17:15:49.143	gatt.close()
+D	17:15:49.147	wait(200)
+V	17:15:49.348	Connecting to 0C:7F:ED:73:1C:E2...
+D	17:15:49.348	gatt = device.connectGatt(autoConnect = false, TRANSPORT_LE, preferred PHY = LE 1M)
+D	17:15:49.694	[Server callback] Connection state changed with status: 0 and new state: CONNECTED (2)
+I	17:15:49.694	[Server] Device with address 0C:7F:ED:73:1C:E2 connected
+D	17:15:49.741	[Callback] Connection state changed with status: 0 and new state: CONNECTED (2)
+D	17:15:49.744	[Broadcast] Action received: android.bluetooth.device.action.ACL_CONNECTED
+I	17:15:49.753	Connected to 0C:7F:ED:73:1C:E2
+D	17:15:49.753	wait(1600ms)
+I	17:15:50.036	Connection parameters updated (interval: 180.0ms, latency: 0, timeout: 10000ms)
+V	17:15:51.354	Discovering services...
+D	17:15:51.354	gatt.discoverServices()
+D	17:15:51.367	[Callback] Services discovered with status: 0
+I	17:15:51.367	Services discovered
+V	17:15:51.374	Generic Access (0x1800)
+- Device Name [R] (0x2A00)
+- Appearance [R] (0x2A01)
+- Peripheral Privacy Flag [R W] (0x2A02)
+- Reconnection Address [W] (0x2A03)
+- Peripheral Preferred Connection Parameters [R] (0x2A04)
+Generic Attribute (0x1801)
+- Service Changed [I] (0x2A05)
+   Client Characteristic Configuration (0x2902)
+Blood Pressure (0x1810)
+- Blood Pressure Measurement [I] (0x2A35)
+   Client Characteristic Configuration (0x2902)
+- Intermediate Cuff Pressure [N] (0x2A36)
+   Client Characteristic Configuration (0x2902)
+- Blood Pressure Feature [R] (0x2A49)
+Device Information (0x180A)
+- System ID [R] (0x2A23)
+- Model Number String [R] (0x2A24)
+- Serial Number String [R] (0x2A25)
+- Firmware Revision String [R] (0x2A26)
+- Hardware Revision String [R] (0x2A27)
+- Software Revision String [R] (0x2A28)
+- Manufacturer Name String [R] (0x2A29)
+- IEEE 11073-20601 Regulatory Certification Data List [R] (0x2A2A)
+- PnP ID [R] (0x2A50)
+D	17:15:51.374	gatt.setCharacteristicNotification(00002a05-0000-1000-8000-00805f9b34fb, true)
+D	17:15:51.377	gatt.setCharacteristicNotification(00002a35-0000-1000-8000-00805f9b34fb, true)
+D	17:15:51.379	gatt.setCharacteristicNotification(00002a36-0000-1000-8000-00805f9b34fb, true)
+I	17:15:52.740	Indication received from 00002a35-0000-1000-8000-00805f9b34fb, value: (0x) 1E-89-00-5D-00-00-00-E5-07-01-01-01-2F-00-57-00-01-00-00
+A	17:15:52.740	"Systolic: 137.0 mmHg
+Diastolic: 93.0 mmHg
+Mean AP: 0.0 mmHg
+Timestamp: 01:47:00 31.01.2021
+Pulse: 87.0 bpm
+User ID: 1" received
+I	17:15:53.283	Indication received from 00002a35-0000-1000-8000-00805f9b34fb, value: (0x) 1E-81-00-5D-00-00-00-E5-07-01-01-01-2E-00-52-00-01-00-00
+A	17:15:53.283	"Systolic: 129.0 mmHg
+Diastolic: 93.0 mmHg
+Mean AP: 0.0 mmHg
+Timestamp: 01:46:00 31.01.2021
+Pulse: 82.0 bpm
+User ID: 1" received
+I	17:15:53.826	Indication received from 00002a35-0000-1000-8000-00805f9b34fb, value: (0x) 1E-7A-00-4C-00-00-00-E5-07-01-01-01-17-00-65-00-01-04-00
+A	17:15:53.826	"Systolic: 122.0 mmHg
+Diastolic: 76.0 mmHg
+Mean AP: 0.0 mmHg
+Timestamp: 01:23:00 31.01.2021
+Pulse: 101.0 bpm
+User ID: 1
+Irregular pulse detected" received
+I	17:15:54.364	Indication received from 00002a35-0000-1000-8000-00805f9b34fb, value: (0x) 1E-7E-00-5A-00-00-00-E5-07-01-01-01-15-00-56-00-01-00-00
+A	17:15:54.364	"Systolic: 126.0 mmHg
+Diastolic: 90.0 mmHg
+Mean AP: 0.0 mmHg
+Timestamp: 01:21:00 31.01.2021
+Pulse: 86.0 bpm
+User ID: 1" received
+I	17:15:54.902	Indication received from 00002a35-0000-1000-8000-00805f9b34fb, value: (0x) 1E-7D-00-55-00-00-00-E5-07-01-01-01-13-00-57-00-01-00-00
+A	17:15:54.902	"Systolic: 125.0 mmHg
+Diastolic: 85.0 mmHg
+Mean AP: 0.0 mmHg
+Timestamp: 01:19:00 31.01.2021
+Pulse: 87.0 bpm
+User ID: 1" received
+I	17:15:55.436	Indication received from 00002a35-0000-1000-8000-00805f9b34fb, value: (0x) 1E-79-00-52-00-00-00-E5-07-01-01-01-0D-00-57-00-01-00-00
+A	17:15:55.437	"Systolic: 121.0 mmHg
+Diastolic: 82.0 mmHg
+Mean AP: 0.0 mmHg
+Timestamp: 01:13:00 31.01.2021
+Pulse: 87.0 bpm
+User ID: 1" received
+I	17:15:55.985	Indication received from 00002a35-0000-1000-8000-00805f9b34fb, value: (0x) 1E-76-00-53-00-00-00-E5-07-01-01-01-0A-00-58-00-01-00-00
+A	17:15:55.985	"Systolic: 118.0 mmHg
+Diastolic: 83.0 mmHg
+Mean AP: 0.0 mmHg
+Timestamp: 01:10:00 31.01.2021
+Pulse: 88.0 bpm
+User ID: 1" received
+I	17:15:56.523	Indication received from 00002a35-0000-1000-8000-00805f9b34fb, value: (0x) 1E-78-00-5B-00-00-00-E5-07-01-01-01-00-00-5A-00-01-00-00
+A	17:15:56.523	"Systolic: 120.0 mmHg
+Diastolic: 91.0 mmHg
+Mean AP: 0.0 mmHg
+Timestamp: 01:00:00 31.01.2021
+Pulse: 90.0 bpm
+User ID: 1" received
+I	17:15:57.068	Indication received from 00002a35-0000-1000-8000-00805f9b34fb, value: (0x) 1E-74-00-55-00-00-00-E5-07-01-01-00-3B-00-5D-00-01-00-00
+A	17:15:57.068	"Systolic: 116.0 mmHg
+Diastolic: 85.0 mmHg
+Mean AP: 0.0 mmHg
+Timestamp: 00:59:00 31.01.2021
+Pulse: 93.0 bpm
+User ID: 1" received
+I	17:15:57.604	Indication received from 00002a35-0000-1000-8000-00805f9b34fb, value: (0x) 1E-7B-00-58-00-00-00-E5-07-01-01-00-35-00-5B-00-01-00-00
+A	17:15:57.604	"Systolic: 123.0 mmHg
+Diastolic: 88.0 mmHg
+Mean AP: 0.0 mmHg
+Timestamp: 00:53:00 31.01.2021
+Pulse: 91.0 bpm
+User ID: 1" received
+I	17:15:58.137	Indication received from 00002a35-0000-1000-8000-00805f9b34fb, value: (0x) 1E-78-00-57-00-00-00-E5-07-01-01-00-25-00-58-00-01-00-00
+A	17:15:58.137	"Systolic: 120.0 mmHg
+Diastolic: 87.0 mmHg
+Mean AP: 0.0 mmHg
+Timestamp: 00:37:00 31.01.2021
+Pulse: 88.0 bpm
+User ID: 1" received
+I	17:15:58.683	Indication received from 00002a35-0000-1000-8000-00805f9b34fb, value: (0x) 1E-7C-00-5C-00-00-00-E5-07-01-01-00-22-00-60-00-01-00-00
+A	17:15:58.683	"Systolic: 124.0 mmHg
+Diastolic: 92.0 mmHg
+Mean AP: 0.0 mmHg
+Timestamp: 00:34:00 31.01.2021
+Pulse: 96.0 bpm
+User ID: 1" received
+I	17:15:59.227	Indication received from 00002a35-0000-1000-8000-00805f9b34fb, value: (0x) 1E-79-00-4D-00-00-00-E5-07-01-01-00-1E-00-5B-00-01-00-00
+A	17:15:59.227	"Systolic: 121.0 mmHg
+Diastolic: 77.0 mmHg
+Mean AP: 0.0 mmHg
+Timestamp: 00:30:00 31.01.2021
+Pulse: 91.0 bpm
+User ID: 1" received
+I	17:15:59.757	Indication received from 00002a35-0000-1000-8000-00805f9b34fb, value: (0x) 1E-80-00-59-00-00-00-E5-07-01-01-00-06-00-66-00-01-00-00
+A	17:15:59.757	"Systolic: 128.0 mmHg
+Diastolic: 89.0 mmHg
+Mean AP: 0.0 mmHg
+Timestamp: 00:06:00 31.01.2021
+Pulse: 102.0 bpm
+User ID: 1" received
+D	17:16:01.243	[Server callback] Connection state changed with status: 0 and new state: DISCONNECTED (0)
+I	17:16:01.243	[Server] Device disconnected
+D	17:16:01.271	[Callback] Connection state changed with status: 19 and new state: DISCONNECTED (0)
+W	17:16:01.271	Connection terminated by peer (status 19)
+I	17:16:01.271	Disconnected
+D	17:16:01.304	[Broadcast] Action received: android.bluetooth.device.action.ACL_DISCONNECTED
